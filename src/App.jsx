@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   // Working hours related states
   const [workingDays, setWorkingDays] = useState(22)
-  const [hoursPerDay, setHoursPerDay] = useState(8.75)
+  const [hoursPerDay, setHoursPerDay] = useState(9.5)
   const [workedHours, setWorkedHours] = useState(0)
   const [monthlySalary, setMonthlySalary] = useState(0)
 
