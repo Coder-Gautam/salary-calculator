@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
   // Working hours related states
-  const [workingDays, setWorkingDays] = useState(22)
-  const [hoursPerDay, setHoursPerDay] = useState(9.5)
-  const [workedHours, setWorkedHours] = useState(0)
-  const [monthlySalary, setMonthlySalary] = useState(0)
+  const [workingDays, setWorkingDays] = useState(22);
+  const [hoursPerDay, setHoursPerDay] = useState(8.5);
+  const [workedHours, setWorkedHours] = useState(0);
+  const [monthlySalary, setMonthlySalary] = useState(0);
 
   // Calculate expected and actual hours
-  const expectedHours = workingDays * hoursPerDay
-  const unworkedHours = Math.max(0, expectedHours - workedHours)
-  const perHourSalary = monthlySalary / expectedHours
-  const deduction = unworkedHours * perHourSalary
-  const finalSalary = monthlySalary - deduction
+  const expectedHours = workingDays * hoursPerDay;
+  const unworkedHours = Math.max(0, expectedHours - workedHours);
+  const perHourSalary = monthlySalary / expectedHours;
+  const deduction = unworkedHours * perHourSalary;
+  const finalSalary = monthlySalary - deduction;
 
   return (
     <div className="salary-calculator">
@@ -109,14 +109,16 @@ function App() {
           <div className="info-box">
             <p>
               {unworkedHours > 0
-                ? `Note: There is a deficit of ${unworkedHours} hours, resulting in a deduction of ₹${deduction.toFixed(2)}`
-                : 'Note: No deficit in working hours. Full salary will be paid.'}
+                ? `Note: There is a deficit of ${unworkedHours} hours, resulting in a deduction of ₹${deduction.toFixed(
+                    2
+                  )}`
+                : "Note: No deficit in working hours. Full salary will be paid."}
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
